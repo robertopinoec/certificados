@@ -1,0 +1,6 @@
+--importar certificado a keystore
+keytool -import -alias sectigo_root -file certificados/2020/digicert_root.cer -keystore cacert.jks -storepass 123567
+keytool -import -alias sectigo_intermediate -file certificados/2020/digicert_intermediate.cer -keystore cacert.jks -storepass 123567
+keytool -import -alias wwwequifax -file certificados/2020/www.equifax.com.ec.cer -keystore cacert.jks -storepass 123567
+--eliminar certificado de keystore
+keytool -delete -alias wwwequifax -keystore cacert.jks -storepass 123567
