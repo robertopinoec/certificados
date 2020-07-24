@@ -4,3 +4,7 @@ keytool -import -alias sectigo_intermediate -file certificados/2020/digicert_int
 keytool -import -alias wwwequifax -file certificados/2020/www.equifax.com.ec.cer -keystore cacert.jks -storepass 123567
 --eliminar certificado de keystore
 keytool -delete -alias wwwequifax -keystore cacert.jks -storepass 123567
+--listar keystore
+keytool -v -list -keystore /oracle/Middleware/security/trust.jks -storepass Claro2014!
+--
+echo | openssl s_client -connect soa.bolivariano.fin.ec:4443 2>/dev/null | openssl x509 -text
